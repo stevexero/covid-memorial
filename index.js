@@ -1,11 +1,18 @@
 const express = require('express');
+const dotenv = require('dotenv');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
+const connectDB = require('./config/db');
+
+// Load env vars
+dotenv.config({ path: './config/config.env' });
 
 app = express();
 
 // App config
-mongoose.connect('mongodb://localhost/covid_memorial');
+// mongoose.connect('mongodb://localhost/covid_memorial');
+// Connect to database
+connectDB();
 
 app.set('view engine', 'ejs');
 
@@ -50,9 +57,15 @@ app.post('/', function(req, res) {
   });
 });
 
+const PORT = process.env.PORT || 5000;
+
 // app.listen(process.env.PORT, process.env.IP, function() {
-app.listen(3000, function() {
-  console.log('Server is running - betta catch it');
-});
+// app.listen(3000, function() {
+//   console.log('Server is running - betta catch it');
+// });
+const server = app.listen(
+  PORT,
+  console.log(`Server running in ${process.env.NODE_ENV} mode on port ${PORT}`)
+);
 
 // db.people.find()
