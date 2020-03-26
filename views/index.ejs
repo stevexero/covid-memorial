@@ -9,6 +9,31 @@
   </head>
   <body>
     <div class="container">
+      <!-- For Mobile -->
+      <div class="mobile-bg-overlay">
+          <i class="fas fa-bars"></i>
+          <i class="fas fa-times"></i>
+          <div class="mobile-form">
+            <h3>Add a Memorial</h3>
+              <form id="person-form" action="/" method="POST">
+                <label for="firstName">First Name</label>
+                <input type="text" name="person[firstName]" id="first-name" required />
+                <label for="lastName">Last Name</label>
+                <input type="text" name="person[lastName]" id="last-name" required />
+                <label for="country">Country</label>
+                <input type="text" name="person[country]" id="country" required />
+                <label for="message">Memorial Message</label>
+                <textarea
+                  name="person[message]"
+                  id="message"
+                  rows="3"
+                  maxlength="50"
+                  required
+                ></textarea>
+                <button type="submit" class="btn">Add Memorial</button>
+              </form>
+          </div>
+      </div>
       <div class="info-container">
         <div class="bg-overlay">
           <h2>Enter the Name of Whom We Lost.</h2>
@@ -16,21 +41,23 @@
           <!--  -->
           <form id="person-form" action="/" method="POST">
             <label for="firstName">First Name</label>
-            <input type="text" name="person[firstName]" id="first-name" />
+            <input type="text" name="person[firstName]" id="first-name" required />
             <label for="lastName">Last Name</label>
-            <input type="text" name="person[lastName]" id="last-name" />
+            <input type="text" name="person[lastName]" id="last-name" required />
             <label for="country">Country</label>
-            <input type="text" name="person[country]" id="country" />
+            <input type="text" name="person[country]" id="country" required />
             <label for="message">Memorial Message</label>
             <textarea
               name="person[message]"
               id="message"
               rows="3"
               maxlength="50"
+              required
             ></textarea>
             <button type="submit" class="btn">Add Memorial</button>
           </form>
           <!--  -->
+          <a href="https://twitter.com/stevedotvegas" target="_blank">Twitter: @stevedotvegas</a>
           <p>Copyright &copy 2020 Steven Woodward</p>
         </div>
       </div>
@@ -51,6 +78,7 @@
         </div>
       </div>
     </div>
+    <script src="js/actions.js"></script>
     <!-- JS: Fontawesome -->
     <script
       src="https://kit.fontawesome.com/5a45150824.js"

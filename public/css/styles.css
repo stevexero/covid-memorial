@@ -21,6 +21,10 @@ body {
   background: var(--main-bg);
 }
 
+.mobile-bg-overlay {
+  display: none;
+}
+
 .container {
   width: 100vw;
   height: 100vh;
@@ -49,6 +53,18 @@ body {
   font-weight: 100;
   position: absolute;
   bottom: 30px;
+  left: 60px;
+}
+
+.bg-overlay a {
+  color: white;
+  text-decoration: none;
+  text-align: center;
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 100;
+  position: absolute;
+  bottom: 80px;
   left: 60px;
 }
 
@@ -163,6 +179,7 @@ textarea::selection {
   color: rgb(241, 241, 241);
   text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.2),
     1px 1px 1px rgba(255, 255, 255, 0.2);
+  overflow: hidden;
 }
 
 .card h2 {
@@ -183,4 +200,200 @@ textarea::selection {
   color: var(--main-bg);
   margin-bottom: 10px;
   opacity: 0.75;
+}
+
+@media (max-width: 400px) {
+  .info-container {
+    display: none;
+  }
+
+  .middle {
+    grid-template-columns: 1fr;
+  }
+
+  .top {
+    height: 90px;
+    padding: 0;
+    text-align: center;
+  }
+
+  .top h1 {
+    font-size: 1.1rem;
+  }
+
+  .top p {
+    display: none;
+  }
+
+  .mobile-bg-overlay {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+  }
+
+  .mobile-bg-overlay .fa-bars {
+    color: white;
+    position: absolute;
+    top: 29px;
+    right: 20px;
+    z-index: 0;
+  }
+
+  .mobile-bg-overlay .fa-times {
+    color: white;
+    position: absolute;
+    top: 29px;
+    right: 20px;
+    z-index: 2;
+    display: none;
+  }
+
+  .mobile-bg-overlay .mobile-form {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--main-bg);
+    z-index: 1;
+    color: white;
+    text-align: center;
+    display: none;
+  }
+
+  .mobile-bg-overlay .mobile-form h3 {
+    margin-top: 30px;
+  }
+
+  .mobile-bg-overlay .mobile-form #person-form {
+    display: flex;
+    flex-direction: column;
+    padding: 0 30px;
+  }
+
+  .mobile-bg-overlay .mobile-form #person-form input {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    border-radius: 10px;
+  }
+
+  .mobile-bg-overlay .mobile-form #person-form textarea {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+  }
+
+  .mobile-bg-overlay .mobile-form #person-form .btn {
+    border: 3px solid white;
+    border-radius: 10px;
+    background: none;
+    color: white;
+    transition: none;
+  }
+
+  .mobile-bg-overlay .mobile-form #person-form .btn:hover {
+    background: none;
+  }
+}
+
+@media (min-width: 400px) and (max-width: 1024px) {
+  .info-container {
+    display: none;
+  }
+
+  .middle {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .top {
+    height: 90px;
+    padding: 0;
+    text-align: center;
+  }
+
+  .top p {
+    font-size: 0.8rem;
+  }
+
+  .top h1 {
+    font-size: 1.3rem;
+  }
+
+  .mobile-bg-overlay {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+  }
+
+  .mobile-bg-overlay .fa-bars {
+    color: white;
+    position: absolute;
+    top: 29px;
+    right: 20px;
+    z-index: 0;
+  }
+
+  .mobile-bg-overlay .fa-times {
+    color: white;
+    position: absolute;
+    top: 29px;
+    right: 20px;
+    z-index: 2;
+    display: none;
+  }
+
+  .mobile-bg-overlay .mobile-form {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 400px;
+    height: 100%;
+    background: var(--main-bg);
+    z-index: 1;
+    color: white;
+    text-align: center;
+    display: none;
+  }
+
+  .mobile-bg-overlay .mobile-form h3 {
+    margin-top: 30px;
+  }
+
+  .mobile-bg-overlay .mobile-form #person-form {
+    display: flex;
+    flex-direction: column;
+    padding: 0 30px;
+  }
+
+  .mobile-bg-overlay .mobile-form #person-form input {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    border-radius: 10px;
+  }
+
+  .mobile-bg-overlay .mobile-form #person-form textarea {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+  }
+
+  .mobile-bg-overlay .mobile-form #person-form .btn {
+    border: 3px solid white;
+    border-radius: 10px;
+    background: none;
+    color: white;
+    transition: none;
+  }
+
+  .mobile-bg-overlay .mobile-form #person-form .btn:hover {
+    background: none;
+  }
 }
