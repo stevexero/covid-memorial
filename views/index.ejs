@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <title>Covid-19 Memorial</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="info-container">
+        <div class="bg-overlay">
+          <h2>Enter the Name of Whom We Lost.</h2>
+          <hr />
+          <!--  -->
+          <form id="person-form" action="/" method="POST">
+            <label for="firstName">First Name</label>
+            <input type="text" name="person[firstName]" id="first-name" />
+            <label for="lastName">Last Name</label>
+            <input type="text" name="person[lastName]" id="last-name" />
+            <label for="country">Country</label>
+            <input type="text" name="person[country]" id="country" />
+            <label for="message">Memorial Message</label>
+            <textarea
+              name="person[message]"
+              id="message"
+              rows="3"
+              maxlength="50"
+            ></textarea>
+            <button type="submit" class="btn">Add Memorial</button>
+          </form>
+          <!--  -->
+          <p>Copyright &copy 2020 Steven Woodward</p>
+        </div>
+      </div>
+      <div class="inner-container">
+        <div class="top">
+          <h1>Covid-19 MEMORIAL</h1>
+          <p>Remembering those who passed due to Covid-19</p>
+        </div>
+        <div class="middle">
+            <%    for (var i = 0; i <people.length; i++) { %>
+          <div class="card">
+            <i class="fas fa-heart"></i>
+            <h2><%= people[i].firstName %> <%= people[i].lastName %></h2>
+            <h6>- <%= people[i].country %> -</h6>
+            <h5><%= people[i].message %></h5>
+          </div>
+          <%    } %>
+        </div>
+      </div>
+    </div>
+    <!-- JS: Fontawesome -->
+    <script
+      src="https://kit.fontawesome.com/5a45150824.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

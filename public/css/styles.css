@@ -1,0 +1,186 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:200,300&display=swap');
+
+:root {
+  --main-bg: rgb(74, 40, 85);
+  --secondary-bg: rgb(56, 21, 68);
+  --main-color: rgb(255, 167, 84);
+  --secondary-color: rgb(218, 170, 126);
+  --light-color: rgb(236, 198, 162);
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  letter-spacing: 2px;
+  line-height: 1.4;
+  background: var(--main-bg);
+}
+
+.container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+}
+
+.info-container {
+  width: 400px;
+  height: 100vh;
+  background: url('/images/memorial.jpg') no-repeat center center/cover;
+  color: white;
+}
+
+.bg-overlay {
+  width: 400px;
+  height: 100vh;
+  background: rgba(74, 40, 85, 0.75);
+  border-right: 4px solid var(--main-color);
+  padding: 30px;
+}
+
+.bg-overlay p {
+  text-align: center;
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 100;
+  position: absolute;
+  bottom: 30px;
+  left: 60px;
+}
+
+.bg-overlay hr {
+  margin-top: 15px;
+  margin-left: 100px;
+  margin-right: -30px;
+  border: 2px solid var(--main-color);
+}
+
+#person-form {
+  display: flex;
+  flex-direction: column;
+  margin-top: 30px;
+}
+
+input {
+  margin-top: 10px;
+  margin-bottom: 30px;
+  padding: 10px 10px;
+  font-size: 1.4rem;
+  border: none;
+  background: var(--secondary-color);
+}
+
+textarea {
+  margin-top: 10px;
+  margin-bottom: 30px;
+  padding: 10px 10px;
+  font-size: 1.4rem;
+  border: none;
+  background: var(--secondary-color);
+  resize: none;
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+  background: var(--light-color);
+}
+
+input::selection,
+textarea::selection {
+  background: rgb(255, 167, 84);
+}
+
+.btn {
+  font-family: 'Montserrat', sans-serif;
+  letter-spacing: 2px;
+  line-height: 1.4;
+  font-weight: 300;
+  padding: 20px 0;
+  font-size: 1.2rem;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+  border: none;
+  background: var(--main-color);
+  color: rgb(90, 34, 1);
+  transition: 0.2s;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background: rgb(194, 116, 44);
+  color: white;
+}
+
+.btn:focus {
+  outline: none;
+}
+
+.inner-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.top {
+  width: 100%;
+  height: 115px;
+  padding: 30px;
+  background: var(--secondary-bg);
+  border-bottom: 4px solid var(--main-color);
+  text-align: right;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.middle {
+  width: 100%;
+  height: 100vh;
+  background: rgb(146, 146, 146);
+  overflow: scroll;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.card {
+  background: rgb(187, 187, 187);
+  max-height: 180px;
+  margin: 10px;
+  box-shadow: inset 2px 2px 2px rgba(248, 248, 248, 0.25),
+    2px 2px 8px rgba(0, 0, 0, 0.25), inset -2px -2px 2px rgba(0, 0, 0, 0.25);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  color: rgb(241, 241, 241);
+  text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.2),
+    1px 1px 1px rgba(255, 255, 255, 0.2);
+}
+
+.card h2 {
+  font-size: 1.3rem;
+  margin-bottom: 5px;
+}
+
+.card h6 {
+  font-size: 0.8rem;
+  margin-bottom: 5px;
+}
+
+.card h5 {
+  font-size: 1rem;
+}
+
+.card i {
+  color: var(--main-bg);
+  margin-bottom: 10px;
+  opacity: 0.75;
+}
