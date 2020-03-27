@@ -11,14 +11,14 @@ if (document.querySelector('.fa-times')) {
 }
 
 function loadOverlay() {
-  console.log('Overlay Loaded');
+  // console.log('Overlay Loaded');
   document.querySelector('.fa-bars').style.display = 'none';
   document.querySelector('.fa-times').style.display = 'block';
   document.querySelector('.mobile-form').style.display = 'block';
 }
 
 function removeOverlay() {
-  console.log('Overlay Removed');
+  // console.log('Overlay Removed');
   document.querySelector('.fa-bars').style.display = 'block';
   document.querySelector('.fa-times').style.display = 'none';
   document.querySelector('.mobile-form').style.display = 'none';

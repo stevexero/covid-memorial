@@ -162,11 +162,16 @@ textarea::selection {
   background: rgb(146, 146, 146);
   overflow: scroll;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(4, auto);
+  grid-auto-rows: 200px;
+  justify-items: center;
+  justify-content: space-between;
 }
 
 .card {
   background: rgb(187, 187, 187);
+  min-width: 230px;
+  max-width: 230px;
   min-height: 180px;
   max-height: 180px;
   margin: 10px;
@@ -203,13 +208,19 @@ textarea::selection {
   opacity: 0.75;
 }
 
-@media (max-device-width: 400px) {
+@media (max-width: 755px) {
   .info-container {
     display: none;
   }
 
   .middle {
-    grid-template-columns: 1fr;
+    /* grid-template-columns: repeat(1, 1fr); */
+    display: flex;
+    flex-direction: column;
+  }
+
+  .card {
+    max-width: 100%;
   }
 
   .top {
@@ -303,13 +314,14 @@ textarea::selection {
   }
 }
 
-@media (min-device-width: 400px) and (max-device-width: 1024px) {
-  .info-container {
-    display: none;
+@media (min-width: 755px) and (max-width: 976px) {
+  .middle {
+    /* grid-template-columns: repeat(3, 1fr); */
+    grid-template-columns: repeat(3, 1fr);
   }
 
-  .middle {
-    grid-template-columns: repeat(3, 1fr);
+  .info-container {
+    display: none;
   }
 
   .top {
@@ -400,5 +412,109 @@ textarea::selection {
 
   .mobile-bg-overlay .mobile-form #person-form .btn:hover {
     background: none;
+  }
+}
+
+@media (min-width: 976px) and (max-width: 1416px) {
+  .info-container {
+    display: none;
+  }
+
+  .top {
+    height: 90px;
+    padding: 0;
+    text-align: center;
+  }
+
+  .top p {
+    font-size: 0.8rem;
+  }
+
+  .top h1 {
+    font-size: 1.3rem;
+  }
+
+  .mobile-bg-overlay {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 90px;
+  }
+
+  .mobile-bg-overlay .fa-bars {
+    color: white;
+    position: absolute;
+    top: 29px;
+    right: 20px;
+    z-index: 0;
+  }
+
+  .mobile-bg-overlay .fa-times {
+    color: white;
+    position: absolute;
+    top: 29px;
+    right: 20px;
+    z-index: 2;
+    display: none;
+  }
+
+  .mobile-bg-overlay .mobile-form {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 400px;
+    height: 100%;
+    background: var(--main-bg);
+    z-index: 1;
+    color: white;
+    text-align: center;
+    display: none;
+  }
+
+  .mobile-bg-overlay .mobile-form h3 {
+    margin-top: 30px;
+  }
+
+  .mobile-bg-overlay .mobile-form #person-form {
+    display: flex;
+    flex-direction: column;
+    padding: 0 30px;
+    padding-bottom: 30px;
+    background: var(--main-bg);
+  }
+
+  .mobile-bg-overlay .mobile-form #person-form input {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    border-radius: 10px;
+  }
+
+  .mobile-bg-overlay .mobile-form #person-form textarea {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+  }
+
+  .mobile-bg-overlay .mobile-form #person-form .btn {
+    border: 3px solid white;
+    border-radius: 10px;
+    background: none;
+    color: white;
+    transition: none;
+  }
+
+  .mobile-bg-overlay .mobile-form #person-form .btn:hover {
+    background: none;
+  }
+}
+
+@media (min-width: 1860px) {
+  .middle {
+    /* grid-template-columns: repeat(3, 1fr); */
+    grid-template-columns: repeat(6, 1fr);
+    /* align-items: start; */
   }
 }
